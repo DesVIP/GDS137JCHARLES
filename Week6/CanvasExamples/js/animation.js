@@ -4,8 +4,8 @@ var ctx = canvas.getContext("2d");
 var timer = requestAnimationFrame(main);
 var x = 100;
 var y = 300;
-var speedX = 10;
-var speedY = 10;
+var speedX = 0;
+var speedY = 0;
 
 var sonic = new Image();
 sonic.src = "images/Sonic.gif";

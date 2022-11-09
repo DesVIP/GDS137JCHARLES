@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the HTML JavaScript Class Riddles Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-        h2{
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: gray;
-            color: cadetblue;
+
+        @font-face {
+            font-family: LT;
+            src: url(fonts/LT\ Funk.otf);
         }
-        h1{
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: brown;
-            background-color: greenyellow;
-            border: 10px seagreen;
+        body{
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: blue;
+            font-family: LT;
         }
     </style>
 </head>
@@ -27,12 +29,16 @@
     <li>
         <p>What time is it when an elephant sits on a fence?</p>
         <br>
-        <p onclick="showAnswer('answer','Time to fix the fense')"id="answer">Answer</p>
+        <button onclick="showAnswer('answer','Time to fix the fense')">Click for  answer</button>
+        <span id="answer"></span>
+        <hr>
     </li>
     <li>
         <p>What gets wet while drying?</p>
         <br>
-        <p onclick="showAnswer('answer2','A towel')"id="answer2">Answer</p>
+        <button onclick="showAnswer('answer2','A towel')">Click for answer</button>
+        <span id="answer2"></span>
+        <hr>
     </li>
     <li>
        <p>What is the difference between a jeweler and a jailer?</p>
