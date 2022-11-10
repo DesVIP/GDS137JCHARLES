@@ -4,7 +4,7 @@ var ctx = canvas.getContext('2d')
 
 //Line
 ctx.fillStyle = "none";
-ctx.strokeStyle = "rgb(255,0,0)"
+ctx.strokeStyle = "rgb(255,0,0)";
 ctx.lineWidth ="5px";
 
 ctx.beginPath();
@@ -37,7 +37,7 @@ ctx.lineWidth = "5px";
 ctx.beginPath();
 ctx.moveTo(558,308);
 ctx.lineTo(666,282);
-ctx.lineTo(724,378);
+ctx.lineTo(728,378);
 ctx.lineTo(651,464);
 ctx.lineTo(545,419);
 ctx.lineTo(558,308);
@@ -52,11 +52,11 @@ ctx.strokeStyle = "black";
 ctx.lineWidth = "5px";
 
 ctx.beginPath();
-ctx.moveTo(87,302);
+ctx.moveTo(85,301);
 ctx.lineTo(185,300);
 ctx.lineTo(185,401);
-ctx.lineTo(84,400);
-ctx.lineTo(87,301);
+ctx.lineTo(84,401);
+ctx.lineTo(85,301);
 ctx.closePath();
 ctx.fill();
 ctx.stroke();
@@ -74,7 +74,7 @@ ctx.lineTo(733,566);
 ctx.lineTo(689,615);
 ctx.lineTo(696,680);
 ctx.lineTo(635,654);
-ctx.lineTo(573,680);
+ctx.lineTo(576,680);
 ctx.lineTo(579,615);
 ctx.lineTo(537,566);
 ctx.lineTo(604,552);
