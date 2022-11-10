@@ -42,7 +42,7 @@ ctx.fill();
 ctx.stroke();
 
 //Some Random Shape
-ctx.fillStyle = "#55ddef";
+ctx.fillStyle = "#55ddef"; 
 ctx.strokeStyle = "yellow";
 ctx.lineWidth = "2";
 
