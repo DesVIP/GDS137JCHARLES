@@ -95,74 +95,74 @@ document.getElementById("scissors").addEventListener('click', function (e) {
 });
 
 function playGame(playerChoice) {
-    if(gameOver == true){
+    if (gameOver == true) {
         return;
     } else {
         var cpuChoice = Math.floor(Math.random() * 2.99);
-    console.log(cpuChoice, playerChoice);
+        console.log(cpuChoice, playerChoice);
 
-    switch (playerChoice) {
-        case "rock":
-            if (cpuChoice == 0) {
-                //rock
-               // alert("CPU chose Rock. It's A Tie!");
-               results = "CPU chose Rock. It's A Tie!";
-               draw(hrock, paper, scissors, hrock, paper, scissors);
-            }
-            else if (cpuChoice == 1) {
-                //paper
-                //alert("CPU chose Paper. You lose!");
-                results = "CPU chose Paper. You Lose!!";
-               draw(hrock, paper, scissors, rock, hpaper, scissors);
-            }
-            else {
-                //alert("CPU chose Scissors. You Win!");
-                results = "CPU chose Scissors. You Win!";
-               draw(hrock, paper, scissors, rock, paper, hscissors);
-            }
+        switch (playerChoice) {
+            case "rock":
+                if (cpuChoice == 0) {
+                    //rock
+                    // alert("CPU chose Rock. It's A Tie!");
+                    results = "CPU chose Rock. It's A Tie!";
+                    draw(hrock, paper, scissors, hrock, paper, scissors);
+                }
+                else if (cpuChoice == 1) {
+                    //paper
+                    //alert("CPU chose Paper. You lose!");
+                    results = "CPU chose Paper. You Lose!!";
+                    draw(hrock, paper, scissors, rock, hpaper, scissors);
+                }
+                else {
+                    //alert("CPU chose Scissors. You Win!");
+                    results = "CPU chose Scissors. You Win!";
+                    draw(hrock, paper, scissors, rock, paper, hscissors);
+                }
 
-            break;
-        case "paper":
-            if (cpuChoice == 0) {
-                //rock
-                //alert("CPU chose Rock. You Win!");
-                results = "CPU chose Rock. You Win!";
-               draw(rock, hpaper, scissors, hrock, paper, scissors);
-            }
-            else if (cpuChoice == 1) {
-                //paper
-                //alert("CPU chose Paper. It's a Tie!");
-                results = "CPU chose Paper. It's A Tie!";
-               draw(rock, hpaper, scissors, rock, hpaper, scissors);
-            }
-            else {
-                //alert("CPU chose Scissors. You Lose!");
-                results = "CPU chose Scissors. You Lose!";
-               draw(rock, hpaper, scissors, rock, paper, hscissors);
-            }
-            break;
-        case "scissors":
-            if (cpuChoice == 0) {
-                //rock
-                //alert("CPU chose Rock. You Lose!");
-                results = "CPU chose Rock. You Lose!!";
-               draw(rock, paper, hscissors, hrock, paper, scissors);
-                
-            }
-            else if (cpuChoice == 1) {
-                //paper
-                //alert("CPU chose Paper. You Win!");
-                results = "CPU chose Paper. You Win!!";
-               draw(rock, paper, hscissors, rock, hpaper, scissors);
-            }
-            else {
-                //alert("CPU chose Scissors. Its a Tie!");
-                results = "CPU chose Scissors. It's A Tie!";
-               draw(hrock, paper, hscissors, rock, paper, hscissors);
-            }
+                break;
+            case "paper":
+                if (cpuChoice == 0) {
+                    //rock
+                    //alert("CPU chose Rock. You Win!");
+                    results = "CPU chose Rock. You Win!";
+                    draw(rock, hpaper, scissors, hrock, paper, scissors);
+                }
+                else if (cpuChoice == 1) {
+                    //paper
+                    //alert("CPU chose Paper. It's a Tie!");
+                    results = "CPU chose Paper. It's A Tie!";
+                    draw(rock, hpaper, scissors, rock, hpaper, scissors);
+                }
+                else {
+                    //alert("CPU chose Scissors. You Lose!");
+                    results = "CPU chose Scissors. You Lose!";
+                    draw(rock, hpaper, scissors, rock, paper, hscissors);
+                }
+                break;
+            case "scissors":
+                if (cpuChoice == 0) {
+                    //rock
+                    //alert("CPU chose Rock. You Lose!");
+                    results = "CPU chose Rock. You Lose!!";
+                    draw(rock, paper, hscissors, hrock, paper, scissors);
 
-            break; 
-            
+                }
+                else if (cpuChoice == 1) {
+                    //paper
+                    //alert("CPU chose Paper. You Win!");
+                    results = "CPU chose Paper. You Win!!";
+                    draw(rock, paper, hscissors, rock, hpaper, scissors);
+                }
+                else {
+                    //alert("CPU chose Scissors. Its a Tie!");
+                    results = "CPU chose Scissors. It's A Tie!";
+                    draw(hrock, paper, hscissors, rock, paper, hscissors);
+                }
+
+                break;
+
+        }
     }
-}
 }
