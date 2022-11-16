@@ -107,7 +107,7 @@ var squares = [];
 // }
 
 var circles = [];
-var numCircles = 5000;
+var numCircles = 2000;
 
 for(var i = 0; i<numCircles;i++){
     circles[i] = new GameObject();
