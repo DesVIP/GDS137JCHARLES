@@ -158,7 +158,7 @@ function playGame(playerChoice) {
                 else {
                     //alert("CPU chose Scissors. Its a Tie!");
                     results = "CPU chose Scissors. It's A Tie!";
-                    draw(hrock, paper, hscissors, rock, paper, hscissors);
+                    draw(rock, paper, hscissors, rock, paper, hscissors);
                 }
 
                 break;
