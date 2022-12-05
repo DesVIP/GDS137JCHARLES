@@ -2,6 +2,8 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var timer = requestAnimationFrame(main);
 var gameOver = false;
+var score = 0;
+var highScore = 0;
 
 //asteroid variables
 var numAsteroids = 20;
@@ -160,7 +162,7 @@ function Asteroid() {
     this.radius = randomRange(15, 2);
     this.x = randomRange(canvas.width - this.radius, this.radius);
     this.y = randomRange(canvas.height - this.radius, this.radius) - canvas.height;
-    this.vy = randomRange(15, 5);
+    this.vy = randomRange(10, 5);
     this.color = "red";
 
     //methods (fuctions) to draw asteroid
@@ -243,6 +245,12 @@ function main() {
     //clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    //draw score to screen
+    ctx.save();
+    ctx.font = "15px Arial";
+    ctx.fillStyle = "White";
+    ctx.fillText("Score: " + score.toString(), canvas.width - 150, 30)
+    ctx.restore();
 
     //verticle movement
     if (ship.up) {
@@ -285,9 +293,14 @@ function main() {
     ship.moveShip();
     ship.drawShip();
 
-    if (!gameOver)
+    if (!gameOver){
         //refresh the screen
         timer = requestAnimationFrame(main);
+    }
+
+    while(asteroids.length < numAsteroids){
+        asteroids.push(new Asteroid());
+    }
 }
 
 //Utility fuctions
@@ -299,3 +312,19 @@ function randomRange(high, low) {
 function detectCollision(distance, calcDistance) {
     return distance < calcDistance;
 }
+
+function scoreTimer(){
+    if(!gameOver){
+        score++;
+
+        if(score % 5 == 0){
+            numAsteroids += 5;
+            console.log(numAsteroids);
+        }
+        //calls scoreTimer every second
+        setTimeout(scoreTimer, 1000);
+    }
+}
+
+//temp call score function
+scoreTimer();
