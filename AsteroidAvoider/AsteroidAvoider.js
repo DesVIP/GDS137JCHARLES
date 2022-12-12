@@ -199,7 +199,7 @@ function Asteroid() {
         ctx.save();
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+        ctx.arc(this.y, this.x, this.radius, 0, Math.PI * 2, true);
         ctx.closePath();
         ctx.fill();
         ctx.restore();
@@ -248,7 +248,7 @@ function PlayerShip() {
         ctx.fillStyle = "blue";
         ctx.beginPath();
         ctx.moveTo(0, -10);
-        ctx.lineTo(10, 10);
+        ctx.lineTo(10, -10);
         ctx.lineTo(-10, 10);
         ctx.lineTo(0, -10);
         ctx.closePath();
