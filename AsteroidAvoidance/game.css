@@ -10,7 +10,7 @@ body{
 }
 
 h1{
-    font-size: 18px;
+    font-size: 30px;
 }
 
 p{
@@ -42,10 +42,38 @@ a.button:hover{
 }
 
 #game{
-    height: 800px;
+    height: 600px;
     left: 50%;
-    margin: -400px, 0, 0 , -500px;
+    margin: -300px, 0, 0 , -400px;
     position: relative;
     top: 50%;
-    width: 900px;
+    width: 800px;
+}
+
+#gameCanvas{
+    background: #001022;
+}
+#gameUI {
+    height: 600px;
+    position:absolute;
+    width: 800px;
+}
+
+#gameIntro, #gameComplete {
+    background: rgba(0,0,0.5);
+    margin-top: 100px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#gameStats{
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+#gameStats .gameReset{
+    margin:20px 20px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
