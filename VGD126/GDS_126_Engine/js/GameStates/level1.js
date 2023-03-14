@@ -59,11 +59,11 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
 sky.img.src = `images/sky.png`
 
-/*
+
  	//Not used, unless you want a 4th level of paralax
 	var clouds = new GameObject({x:level.x,y:level.y})
 	clouds.img.src=`images/ground.png`
-*/
+
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
@@ -312,6 +312,7 @@ gameStates[`level1`] = function()
 	
 	//Renders front of cave
 	front.play().render(`drawSprite`);
+	
 	
 
 }
