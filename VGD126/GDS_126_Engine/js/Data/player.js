@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/DarkElf v3.png`
+		src:`images/DarkElf v9.png`
 	},
 	states:{
 		//The idle animation 
@@ -37,7 +37,7 @@ var playerData ={
 		//The walwidth:128, height:128,
 		walk:
 		{
-			fps:1,
+			fps:5,
 			cycle:true,
 			frames:
 			[
@@ -75,7 +75,7 @@ var playerData ={
 		//The attack animation 
 		attack:
 		{
-			fps:3,
+			fps:1,
 			cycle:false,
 			//width:300,
 			frames:
