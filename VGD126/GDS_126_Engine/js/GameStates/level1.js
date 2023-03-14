@@ -63,16 +63,16 @@ sky.img.src = `images/Charles S.png`
 
  	//Not used, unless you want a 4th level of paralax
 	var clouds = new GameObject({x:level.x,y:level.y})
-	clouds.img.src=`images/Platform.png`
+	clouds.img.src=`images/Tree.png`
 
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/Charles RB.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+bg.img.src=`images/.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -85,7 +85,7 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	bullets[i].img.src="images/Dark Flames.png"
+	//bullets[i].img.src="images/mrt.jpg"
 	bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
 	bullets[i].changeState(`walk`)
