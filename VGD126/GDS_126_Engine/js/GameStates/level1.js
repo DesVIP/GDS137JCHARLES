@@ -11,7 +11,7 @@ wiz.force=1
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2,height:64,y:canvas.height-32, color:"green"})
-ground.img.src=`images/ground.png`
+ground.img.src=`images/Charles M.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
@@ -57,7 +57,7 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src = `images/sky.png`
+sky.img.src = `images/Charles S.png`
 
 
  	//Not used, unless you want a 4th level of paralax
@@ -67,7 +67,7 @@ sky.img.src = `images/sky.png`
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/hills.`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
