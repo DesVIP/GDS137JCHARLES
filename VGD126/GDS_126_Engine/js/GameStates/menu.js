@@ -4,8 +4,8 @@ This file contains all of the code for the Main Menu
 
 var startButton = new GameObject({width:200});
 startButton.img.src="images/Play Button.png"
-startButton.width=200;
-startButton.hitBoxWidth=800
+//startButton.width=200;
+//startButton.hitBoxWidth=800
 console.log(startButton.collisionPoints.right)
 
 
@@ -37,6 +37,7 @@ gameStates[`menu`] =function(){
 	
 	menuBackground.drawStaticImage();
 	startButton.render()
+	startButton.drawStaticImage()
 }
 	
 	
