@@ -14,7 +14,9 @@ var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2,height:6
 ground.img.src=`images/Charles M.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"purple"})
+plat.img.src='images/Platform.png'
+
 
 
 
@@ -44,7 +46,7 @@ g1.add([ground,leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground])
 
 //used to render the sprites
 var sprites = new Group();
@@ -87,9 +89,9 @@ for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
 	bullets[i].img.src="images/Dark Flames.png"
-	bullets[i].makeSprite(playerData)
+	//bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`idle`)
+	//bullets[i].changeState(`idle`)
 }
 
 //console.log(bullets)
@@ -281,6 +283,7 @@ gameStates[`level1`] = function()
 
 	//renders the objects in the rect group
 	rects.render(`drawRect`, [0,0,100,100])
+	plat.drawStaticImage()
 	
 	/*----Used for debugging----*/
 	/*context.beginPath()
@@ -299,8 +302,9 @@ gameStates[`level1`] = function()
 	{
 		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
-		bullets[i].play(function(){return}).drawSprite()
+		//bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
+		bullets[i].drawStaticImage([])
 		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
 			
