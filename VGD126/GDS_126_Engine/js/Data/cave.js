@@ -2,18 +2,18 @@ var x=false;
 var caveData ={
 	info:{
 		layout:[
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,6,6,6,6,6,6,6,6,6,6,6,6,6,6,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,2]
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,x],
 			
 			
 		],
-		src:`images/cave.png`,
+		src:`images/Log Tunnel v3.png`,
 	},
 	states:
 	[		
@@ -69,15 +69,15 @@ var caveData ={
 	var caveBackData ={
 		info:{
 			layout:[
-			[0,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[x,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[x,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[x,8,8,8,8,3,3,3,3,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[3,8,8,8,8,3,x,x,x,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[3,8,8,8,8,3,3,3,3,3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
-			[3,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,8],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,8],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,8],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,8],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],
 			],
-			src:`images/cave.png`,
+			src:`images/Log Tunnel v3.png`,
 		},
 		states:caveData.states
 		}
@@ -85,18 +85,18 @@ var caveData ={
 		var caveHitData={
 			info:{
 				layout:[
-					[x,x,x,x,x,x,x,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,2],
-					[x,x,x,x,x,x,x,1,1,1,1,1,1,8,8,1,8,8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,8,8,x,1,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2]
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,8],
+					[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x]
 					
 					
 				],
-				src:`images/cave.png`,
+				src:`images/Log Tunnel v3.png`,
 			},
 			states:caveData.states
 			
