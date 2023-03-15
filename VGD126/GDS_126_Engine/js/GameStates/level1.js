@@ -59,7 +59,7 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src = `images/Charles S.png`
+sky.img.src = `images/Sky v3.png`
 
 
  	//Not used, unless you want a 4th level of paralax
@@ -69,11 +69,11 @@ sky.img.src = `images/Charles S.png`
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/Charles RB.png`
+rbg.img.src=`images/Repeat.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/.png`
+bg.img.src=`images/Tall Trees.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -258,7 +258,7 @@ gameStates[`level1`] = function()
 	var groundPattern = context.createPattern(ground.img, `repeat`);
 	//Applies pattern to ground and platform
 	ground.color = groundPattern
-	plat.color = groundPattern
+	
 
 	//Sets up pattern for the sky
 	var skyPattern = context.createPattern(sky.img, `repeat`);
