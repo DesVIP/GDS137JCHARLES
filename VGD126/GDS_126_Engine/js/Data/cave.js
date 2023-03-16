@@ -9,7 +9,7 @@ var caveData ={
 			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
 			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
 			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2],
-			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,x],
+			[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2],
 			
 			
 		],
