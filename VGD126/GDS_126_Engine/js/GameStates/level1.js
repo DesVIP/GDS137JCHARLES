@@ -164,11 +164,12 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 65) ;
+			bullets[currentBullet].y = wiz.y - 5;
 			bullets[currentBullet].dir = wiz.dir;
 			
 			sounds.play(`attack`,0)
+			sounds["attack"].volume= .5
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)

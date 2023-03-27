@@ -23,6 +23,7 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
+			sounds.play("The Forbidden Forest.mp3"),0,true
 		}
 
 		//Hover Effect Graffic
@@ -33,6 +34,8 @@ gameStates[`menu`] =function(){
 	{
 		//Default Button Graphic
 		startButton.color = `purple`
+		startButton.img.src="images/Bigger Button.png"
+
 	}
 	
 	menuBackground.drawStaticImage();
