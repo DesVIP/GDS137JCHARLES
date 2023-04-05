@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body{
+    background-color: brown;
+    color: bisque;
+}
+p{
+    color: yellow;
+}
+#white{
+    color: white
+}
