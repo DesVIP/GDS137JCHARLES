@@ -1,12 +1,25 @@
 @charset "UTF-8";
 
 body{
-    background-color: brown;
+    background-color: darkred;
     color: bisque;
 }
 p{
     color: yellow;
 }
-#white{
-    color: white
+#red{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:link, a:visited{
+    color: yellow;
+}
+
+a:hover, a:active{
+    color: purple;
 }
