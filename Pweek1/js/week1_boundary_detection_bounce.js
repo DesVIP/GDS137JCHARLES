@@ -35,10 +35,18 @@ function animate()
 	}
 	
 	//---------------------------------------------------
+	//left bounce
 	if(player.x < 100 - player.width/2)
 	{
 		player.vx = -player.vx;
 		player.vx < 100 - player.width/2;
+	}
+
+	//bottom bounce
+	if(player.y > 100)
+	{
+		player.vy = -player.vy;
+		player.y > 100;
 	}
 	player.draw();
 }
