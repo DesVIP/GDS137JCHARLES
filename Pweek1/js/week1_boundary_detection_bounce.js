@@ -30,6 +30,9 @@ function animate()
 	if(player.x > canvas.width - player.width/2)
 	{
 		player.vx = -player.vx;	
+		ball.x=canvas.width;
+ball.x-= //Some number of pixels
+ball.vx = -ball.vx;
 	}
 	//---------------------------------------------------
 	
