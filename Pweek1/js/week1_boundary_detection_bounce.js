@@ -30,6 +30,7 @@ function animate()
 	if(player.x > canvas.width - player.width/2)
 	{
 		player.vx = -player.vx;	
+		player.x = canvas.width - player.width/2
 	}
 	//---------------------------------------------------
 	
