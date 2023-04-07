@@ -25,7 +25,7 @@ function Player()
 			//context.arc(this.x)((-this.width/2), (-this.height/2), this.width, this.height);
 		//context.restore();
 		context.beginPath();
-context.arc(this.x,this.y,radius,0,360*Math.PI/180,true)
+		context.arc(0, 0, this.width/2, 0, 360 *Math.PI/180, true);
 context.closePath();
 context.fill();
 	}	
