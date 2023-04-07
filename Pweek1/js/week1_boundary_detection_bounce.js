@@ -38,7 +38,7 @@ function animate()
 	if(player.x < 0 - player.width/2)
 	{
 		player.vx = -player.vx;
-		player.vx < 0 - player.width/2;
+		player.vx < 50 - player.width/2;
 	}
 	player.draw();
 }
