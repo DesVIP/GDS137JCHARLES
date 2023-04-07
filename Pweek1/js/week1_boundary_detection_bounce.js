@@ -11,8 +11,8 @@ var player;
 	player = new Player();
 	
 	//------Declare the Player's speed on the x and y axis------
-	player.vx = 10;
-	player.vy = 10;
+	player.vx = 2;
+	player.vy = 2;
 	//----------------------------------------------------
 	
 	timer = setInterval(animate, interval);
@@ -32,6 +32,9 @@ function animate()
 		player.vx = -player.vx;	
 		player.x = canvas.width - player.width/2;
 		
+		
+		
+		
 	}
 	
 	//---------------------------------------------------
@@ -40,6 +43,9 @@ function animate()
 	{
 		player.vx = -player.vx;
 		player.vx < 100 - player.width/2;
+		
+		
+		
 	}
 
 	//bottom bounce
@@ -47,12 +53,16 @@ function animate()
 	{
 		player.vy = -player.vy;
 		player.y > canvas.height - player.height/2;
+		
+		
 	}
 
+	//top bounce
 	if(player.y < player.height+750 - canvas.height)
 	{
 		player.vy = -player.vy
 		player.y < player.height - canvas.height;
+		
 	}
 
 player.draw();
