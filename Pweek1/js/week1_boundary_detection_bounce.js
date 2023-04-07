@@ -35,10 +35,10 @@ function animate()
 	}
 	
 	//---------------------------------------------------
-	if(player.x < 70 - player.width/2)
+	if(player.x < 90 - player.width/2)
 	{
 		player.vx = -player.vx;
-		player.vx < 70 - player.width/2;
+		player.vx < 90 - player.width/2;
 	}
 	player.draw();
 }
