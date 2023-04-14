@@ -45,7 +45,7 @@ function release(e)
 	{
 		d = false;
 	}
-	if(e.keCode == 83)
+	if(e.keyCode == 83)
 	{
 		w = false;
 	}
