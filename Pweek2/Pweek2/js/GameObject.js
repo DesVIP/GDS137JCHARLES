@@ -4,7 +4,7 @@ function GameObject(x,y,w,h,color)
 	
 	//Default Values
 	if(x == undefined)
-		this.x = canvas.width/2;
+		this.x = canvas.width/2-502;
 	else 
 		this.x = x;
 	if(y == undefined)
@@ -66,7 +66,7 @@ function GameObject(x,y,w,h,color)
 	
 	this.left = function() 
 	{
-		return this.x - this.width/2;
+		return this.x + this.width;
 	}
 	this.right = function() 
 	{
