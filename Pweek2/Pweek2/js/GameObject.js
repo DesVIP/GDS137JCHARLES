@@ -13,17 +13,17 @@ function GameObject(x,y,w,h,color)
 		this.y = y;
 	
 	if(w == undefined)
-		this.width = 100;
+		this.width = 20;
 	else 
 		this.width = w;
 	if(h == undefined)
-		this.height = 100;
+		this.height = 150;
 	else 
 		this.height = h;
 	
 		//player's color
 	if(color == undefined)
-		this.color = "#ff0000";
+		this.color = "purple";
 	else 
 		this.color = color;
 	
