@@ -9,4 +9,3 @@ context = canvas.getContext("2d");
 function animate()
 
 
-<script type="text/javascript" src="js/GameObject.js"></script>
