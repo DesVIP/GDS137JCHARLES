@@ -5,7 +5,7 @@ var ctx = canvas.getContext('2d')
 //Line
 ctx.fillStyle = "none";
 ctx.strokeStyle = "rgb(255,0,0)";
-ctx.lineWidth ="5px";
+ctx.lineWidth ="5";
 
 ctx.beginPath();
 ctx.moveTo(278,549);
