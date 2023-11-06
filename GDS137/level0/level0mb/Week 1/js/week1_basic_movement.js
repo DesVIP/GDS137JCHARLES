@@ -6,7 +6,7 @@ var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
 var player;
-var ball =
+
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");

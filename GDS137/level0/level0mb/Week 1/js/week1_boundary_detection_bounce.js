@@ -30,8 +30,15 @@ function animate()
 	if(player.x > canvas.width - player.width/2)
 	{
 		player.vx = -player.vx;	
+		player.x = canvas.width - player.width/2;
+		
 	}
 	//---------------------------------------------------
-	
+	//------------Bounce of Left-------------------------
+	if(player.x < 100 - player.width/2)
+	{
+		player.vx = -player.vx;
+		player.vx < canvas.width - player.width/2;
+	}
 	player.draw();
 }
