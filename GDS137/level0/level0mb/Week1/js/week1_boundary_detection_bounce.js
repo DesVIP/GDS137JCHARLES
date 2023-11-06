@@ -31,6 +31,7 @@ function animate()
 	{
 		player.vx = -player.vx;	
 		player.x = canvas.width - player.width/2;
+		player.vx = -30;
 		
 	}
 	//---------------------------------------------------
@@ -40,6 +41,7 @@ function animate()
 	{
 		player.vx = -player.vx;
 		player.vx < canvas.width - player.width/2;
+		player.vx = 10;
 	}
 	//---------------------------------------------------
 
@@ -48,6 +50,7 @@ function animate()
 	{
 		player.vy = -player.vy
 		player.y < player.height - canvas.height;
+		player.vy = -12;
 	}
 	//---------------------------------------------------
 
@@ -56,6 +59,7 @@ function animate()
 	{
 		player.vy = -player.vy;
 		player.y < player.height - canvas.height;
+		player.vy = 25;
 	}
 	player.draw();
 }
