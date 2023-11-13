@@ -44,6 +44,17 @@ function animate()
 		console.log("Moving Down");
 		player.y += 2;
 	}
+
+	//Boundaries
+
+	//The Up Boundary
+	if(player.y < player.height - canvas.height)
+	{
+		player.vy = -player.vy;
+		player.y < player.height - canvas.height;
+		
+	}
+
 	//Update the Screen
 	player.drawRect();
 }
