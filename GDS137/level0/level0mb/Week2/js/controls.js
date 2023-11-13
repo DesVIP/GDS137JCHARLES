@@ -26,7 +26,7 @@ function press(e)
 	{
 		w = true;
 	}
-	if(e.keycode == 83)
+	if(e.keyCode == 83)
 	{
 		s = true;
 	}
@@ -49,7 +49,7 @@ function release(e)
 	{
 		w = false;
 	}
-	if(e.keycode == 83)
+	if(e.keyCode == 83)
 	{
 		s = false;
 	}
