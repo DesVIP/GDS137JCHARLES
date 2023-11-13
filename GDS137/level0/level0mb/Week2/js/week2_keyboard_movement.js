@@ -41,7 +41,7 @@ function animate()
 	}
 	if(s)
 	{
-		console.log("Moving Down")
+		console.log("Moving Down");
 		player.y += 2;
 	}
 	//Update the Screen
