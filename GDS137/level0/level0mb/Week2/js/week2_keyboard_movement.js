@@ -37,30 +37,30 @@ function animate()
 	if(w)
 	{
 		console.log("Moving Up");
-		player.y += 2;
+		player.y += -2;
 	}
 	if(s)
 	{
 		console.log("Moving Down")
-		player.y += -2;
+		player.y += 2;
 	}
 
 	//Boundaries
 
-	//---------------Bounce of Up------------------------
-	if(player.y < player.height+750 - canvas.height)
+	//---------------Boundary of Up------------------------
+	if(player.y < canvas.height - player.height)
+	{
+		player.vy = -player.vy;
+		player.y < player.height;
+	}
+
+	//---------------Boundary of Down----------------------
+    if(player.y > canvas.height - player.height)
 	{
 		player.vy = -player.vy;
 		player.y < player.height - canvas.height;
 	}
 
-	//---------------Bounce of Down----------------------
-    if(player.y > canvas.height+50 - player.height)
-	{
-		player.vy = -player.vy
-		player.y < player.height - canvas.height;
-	}
-	
 	//Update the Screen
 	player.drawRect();
 }
