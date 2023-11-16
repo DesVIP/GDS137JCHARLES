@@ -6,6 +6,7 @@ var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
 var player;
+var ball;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -13,12 +14,58 @@ var player;
 	
 	//Instantiate the Player
 	player = new GameObject();
+	ball = new GameObject();
+
+	//------Declare the Player's speed on the x and y axis------
+	ball.vx = 2;
+	ball.vy = 2;
+	//----------------------------------------------------
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
 
 function animate()
 {
+
+	//----Movement Using the Player's move() function----
+	
+	//---------------------------------------------------
+	
+	//--------------Bounce of Right----------------------
+	if(ball.x > canvas.width - ball.width/2)
+	{
+		ball.vx = -ball.vx;	
+		ball.x = canvas.width - ball.width/2;
+		ball.vx = -30;
+		
+	}
+	//---------------------------------------------------
+
+	//------------Bounce of Left-------------------------
+	if(ball.x < 0 - ball.width/2)
+	{
+		ball.vx = -ball.vx;
+		ball.vx < canvas.width - ball.width/2;
+		ball.vx = 10;
+	}
+	//---------------------------------------------------
+
+	//---------------Bounce of Down----------------------
+    if(ball.y > canvas.height+50 - ball.height)
+	{
+		ball.vy = -ball.vy
+		ball.y < ball.height - canvas.height;
+		ball.vy = -12;
+	}
+	//---------------------------------------------------
+
+	//---------------Bounce of Up------------------------
+	if(ball.y < ball.height+750 - canvas.height)
+	{
+		ball.vy = -ball.vy;
+		ball.y < ball.height - canvas.height;
+		ball.vy = 25;
+	}
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
@@ -55,6 +102,8 @@ function animate()
 
 	//Update the Screen
 	player.drawRect();
-	player.draw();
+	ball.drawCircle();
+	
+	ball.move();
 }
 
