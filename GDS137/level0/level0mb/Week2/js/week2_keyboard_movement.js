@@ -24,16 +24,7 @@ function animate()
 	
 	
 	//Move the Player to the right
-	if(d)
-	{
-		console.log("Moving Right");
-		player.x += 2;
-	}
-	if(a)
-	{
-		console.log("Moving Left");
-		player.x += -2;
-	}
+	
 	if(w)
 	{
 		console.log("Moving Up");
@@ -47,21 +38,23 @@ function animate()
 
 	//Boundaries
 
-	//---------------Boundary of Up------------------------
-	if(player.y < canvas.height - player.height)
+	
+	//---------------Boundary of Down----------------------
+    if(player.y > 725)
 	{
-		player.vy = -player.vy;
-		player.y < player.height;
+		
+		player.y = 725;
 	}
 
-	//---------------Boundary of Down----------------------
-    if(player.y > canvas.height - player.height)
+	//---------------Boundary of Up------------------------
+	if(player.y < player.height/2)
 	{
-		player.vy = -player.vy;
-		player.y < player.height - canvas.height;
+		player.y = player.height/2;
 	}
+
 
 	//Update the Screen
 	player.drawRect();
+	player.draw();
 }
 
