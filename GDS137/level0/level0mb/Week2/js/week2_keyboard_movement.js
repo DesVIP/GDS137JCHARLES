@@ -42,7 +42,7 @@ function animate()
 	//---------------------------------------------------
 
 	//------------Bounce of Left-------------------------
-	if(ball.x < 0 - ball.width/2)
+	if(ball.x < ball.width/2)
 	{
 		ball.vx = -ball.vx;
 		ball.vx < canvas.width - ball.width/2;
@@ -51,7 +51,7 @@ function animate()
 	//---------------------------------------------------
 
 	//---------------Bounce of Down----------------------
-    if(ball.y > canvas.height+50 - ball.height)
+    if(ball.y > canvas.height)
 	{
 		ball.vy = -ball.vy
 		ball.y < ball.height - canvas.height;
@@ -60,10 +60,10 @@ function animate()
 	//---------------------------------------------------
 
 	//---------------Bounce of Up------------------------
-	if(ball.y < ball.height+750 - canvas.height)
+	if(ball.y < 0)
 	{
 		ball.vy = -ball.vy;
-		ball.y < ball.height - canvas.height;
+		ball.y < ball.height/2;
 		ball.vy = 25;
 	}
 	//Erase the Screen
