@@ -39,9 +39,12 @@ function animate() {
 
   //------------Bounce of Left-------------------------
   if (ball.x < ball.width / 2) {
-    ball.vx = -ball.vx;
+    ball.vy = 0;
+    
     ball.vx < canvas.width - ball.width / 2;
-    ball.vx = 10;
+    ball.vx = -10;
+    ball.x = canvas.width/2
+    ball.y = canvas.height/2
    }
    
   //---------------------------------------------------
