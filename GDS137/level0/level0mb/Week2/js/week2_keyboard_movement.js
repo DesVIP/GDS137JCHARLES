@@ -7,6 +7,7 @@ var timer;
 var interval = 1000 / 60;
 var player;
 var ball;
+var prevX;
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
@@ -15,6 +16,7 @@ context = canvas.getContext("2d");
 //Instantiate the Player
 player = new GameObject();
 ball = new GameObject();
+ball.x = 100;
 
 //------Declare the Player's speed on the x and y axis------
 ball.vx = 2;
@@ -25,31 +27,31 @@ ball.vy = 2;
 timer = setInterval(animate, interval);
 
 function animate() {
-  //----Movement Using the Player's move() function----
-
-  //---------------------------------------------------
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
     ball.vx = -ball.vx;
     ball.x = canvas.width - ball.width / 2;
-    ball.vx = -30;
+    ball.vx = -10;
   }
   //---------------------------------------------------
 
   //------------Bounce of Left-------------------------
-  if (ball.x < ball.width / 2) {
+  /*if (ball.x < ball.width / 2) {
     ball.vx = -ball.vx;
     ball.vx < canvas.width - ball.width / 2;
     ball.vx = 10;
-  }
+   }
+   */
   //---------------------------------------------------
 
   //---------------Bounce of Down----------------------
   if (ball.y > canvas.height) {
+    console.log(ball.y)
     ball.vy = -ball.vy;
     ball.y < ball.height - canvas.height;
-    ball.vy = -12;
+    ball.vy = -10;
   }
   //---------------------------------------------------
 
@@ -57,7 +59,7 @@ function animate() {
   if (ball.y < 0) {
     ball.vy = -ball.vy;
     ball.y < ball.height / 2;
-    ball.vy = 25;
+    ball.vy = 10;
   }
   //Erase the Screen
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -66,11 +68,11 @@ function animate() {
 
   if (w) {
     console.log("Moving Up");
-    player.y += -2;
+    player.y += -4;
   }
   if (s) {
     console.log("Moving Down");
-    player.y += 2;
+    player.y += 4;
   }
 
   //Boundaries
@@ -86,15 +88,16 @@ function animate() {
   }
 
   //Paddle Boundary
-  if (rect.hitTestObject(player)) {
-    player.x = prevX;
+  if (player.hitTestObject(ball)) {
+    ball.x = prevX;
+    ball.vx = 0 - ball.vx;
+    console.log("colliding");
   } else {
-    prevX = player.x;
+    prevX = ball.x;
   }
 
   //Update the Screen
   player.drawRect();
   ball.drawCircle();
-
   ball.move();
 }

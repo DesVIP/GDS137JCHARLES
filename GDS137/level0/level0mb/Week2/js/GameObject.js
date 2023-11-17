@@ -1,7 +1,7 @@
 // JavaScript Document
 function GameObject(x, y, w, h, color) {
   //Default Values
-  if (x == undefined) this.x = canvas.width / 2 - 510;
+  if (x == undefined) this.x = canvas.width / 2 - 502;
   else this.x = x;
   if (y == undefined) this.y = canvas.height / 2;
   else this.y = y;
@@ -12,7 +12,7 @@ function GameObject(x, y, w, h, color) {
   else this.height = h;
 
   //player's color
-  if (color == undefined) this.color = "#5B027D";
+  if (color == undefined) this.color = "blue";
   else this.color = color;
 
   //player's velocity or speed on each axis
@@ -35,11 +35,11 @@ function GameObject(x, y, w, h, color) {
 
   this.drawCircle = function () {
     context.save();
-    context.fillStyle = this.color;
+    context.fillStyle = "red";
     context.beginPath();
     context.translate(this.x, this.y);
-    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
-    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
     context.closePath();
     context.fill();
     context.restore();
@@ -64,7 +64,7 @@ function GameObject(x, y, w, h, color) {
   this.bottom = function () {
     return this.y + this.height / 2;
   };
-
+// This checks if the object is colliding
   this.hitTestObject = function (obj) {
     if (
       this.left() < obj.right() &&
