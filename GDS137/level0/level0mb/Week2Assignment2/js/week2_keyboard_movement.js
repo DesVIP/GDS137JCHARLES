@@ -38,11 +38,11 @@ function animate() {
   //---------------------------------------------------
 
   //------------Bounce of Left-------------------------
-  /*if (ball.x < ball.width / 2) {
+  if (ball.x < ball.width / 2) {
     ball.vx = -ball.vx;
     ball.vx < canvas.width - ball.width / 2;
     ball.vx = 10;
-   }*/
+   }
    
   //---------------------------------------------------
 
