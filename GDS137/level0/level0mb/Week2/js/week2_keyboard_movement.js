@@ -85,6 +85,13 @@ function animate() {
     player.y = player.height / 2;
   }
 
+  //Paddle Boundary
+  if (rect.hitTestObject(player)) {
+    player.x = prevX;
+  } else {
+    prevX = player.x;
+  }
+
   //Update the Screen
   player.drawRect();
   ball.drawCircle();
