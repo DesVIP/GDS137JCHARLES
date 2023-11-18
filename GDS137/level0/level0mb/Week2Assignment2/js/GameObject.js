@@ -8,7 +8,7 @@ function GameObject(x, y, w, h, color) {
 
   if (w == undefined) this.width = 20;
   else this.width = w;
-  if (h == undefined) this.height = 150;
+  if (h == undefined) this.height = 200;
   else this.height = h;
 
   //player's color
@@ -38,8 +38,8 @@ function GameObject(x, y, w, h, color) {
     context.fillStyle = "red";
     context.beginPath();
     context.translate(this.x, this.y);
-    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
-    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
     context.closePath();
     context.fill();
     context.restore();
