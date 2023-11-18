@@ -49,6 +49,7 @@ function GameObject(x, y, w, h, color) {
   this.move = function () {
     this.x += this.vx;
     this.y += this.vy;
+    //console.log(ball.y); 
   };
 
   this.left = function () {

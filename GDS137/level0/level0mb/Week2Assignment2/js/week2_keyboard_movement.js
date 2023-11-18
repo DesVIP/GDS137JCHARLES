@@ -70,11 +70,12 @@ function animate() {
   //Move the Player to the right
 
   if (w) {
-    console.log("Moving Up");
+    //console.log("Moving Up");
     player.y += -4;
+    //console.log(player.y);
   }
   if (s) {
-    console.log("Moving Down");
+    //console.log("Moving Down");
     player.y += 4;
   }
 
@@ -92,6 +93,9 @@ function animate() {
 
   //Paddle Boundary
   if (player.hitTestObject(ball)) {
+    if ((ball.y > (player.y - player.height) ) && (ball.y < (player.y - (player.height/3 ) * 2))) {
+      console.log("IM AT THE TOP")
+    }
     ball.x = prevX;
     ball.vx = 0 - ball.vx;
     console.log("colliding");
