@@ -5,9 +5,10 @@ var context;
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000 / 60;
-var player;
+var player1;
 var ball;
 var prevX;
+var player2;
 
 
 //Set Up the Canvas
@@ -15,8 +16,15 @@ canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
 
 //Instantiate the Player
-player = new GameObject();
+player1 = new GameObject();
 ball = new GameObject();
+player2 = new GameObject(
+  canvas.width/2 + 502,
+  canvas.height / 2 ,
+  20,
+  150,
+  "#00D241"
+);
 ball.x = 100;
 
 //------Declare the Player's speed on the x and y axis------
@@ -32,9 +40,12 @@ function animate() {
 
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
-    ball.vx = -ball.vx;
-    ball.x = canvas.width - ball.width / 2;
-    ball.vx = -10;
+    ball.vy = 0;
+
+    ball.vx > canvas.width + ball.width / 2;
+    ball.vx = 10;
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
   }
   //---------------------------------------------------
 
@@ -72,41 +83,71 @@ function animate() {
 
   if (w) {
     //console.log("Moving Up");
-    player.y += -10;
+    player1.y += -10;
     //console.log(player.y);
   }
   if (s) {
     //console.log("Moving Down");
-    player.y += 10;
+    player1.y += 10;
+  }
+  if (i) {
+    player2.y += -10;
+  }
+  if (j) {
+    player2.y += 10;
   }
 
   //Boundaries
 
   //---------------Boundary of Down----------------------
-  if (player.y > 725) {
-    player.y = 725;
+  if (player1.y > 725) {
+    player1.y = 725;
+  }
+  if (player2.y > 725) {
+    player2.y = 725
   }
 
   //---------------Boundary of Up------------------------
-  if (player.y < player.height / 2) {
-    player.y = player.height / 2;
+  if (player1.y < player1.height / 2) {
+    player1.y = player1.height / 2;
+  }
+  if (player2.y < player2.height / 2) {
+    player2.y = player2.height / 2;
   }
 
   //Paddle Boundary
-  if (player.hitTestObject(ball)) {
+  if (player1.hitTestObject(ball)) {
 
     //Top
-    if (ball.y < player.y - 25) {
+    if (ball.y < player1.y - 25) {
       ball.vx = -5;
       ball.vy = -5;
     } 
      //Bottom 
-  if (ball.y > player.y + 25) {
+  if (ball.y > player1.y + 25) {
     ball.vx = -5;
     ball.vy = 5;
   }
+    //Middle
+    ball.x = prevX;
+    ball.vx = 0 - ball.vx;
+    console.log("colliding");
+  } else {
+    prevX = ball.x;
+  }
 
+  if (player2.hitTestObject(ball)) {
 
+    //Top
+    if (ball.y < player2.y - 25) {
+      ball.vx = 5;
+      ball.vy = -5;
+    } 
+     //Bottom 
+  if (ball.y > player2.y + 25) {
+    ball.vx = 5;
+    ball.vy = 5;
+  }
     //Middle
     ball.x = prevX;
     ball.vx = 0 - ball.vx;
@@ -118,7 +159,8 @@ function animate() {
  
 
   //Update the Screen
-  player.drawRect();
+  player1.drawRect();
+  player2.drawRect();
   ball.drawCircle();
   ball.move();
 }

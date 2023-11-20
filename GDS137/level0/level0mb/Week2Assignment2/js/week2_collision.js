@@ -20,7 +20,7 @@ player.x = 100;
 
 lBlock1 = new GameObject(
   canvas.width - 750,
-  canvas.height / 2 + 75,
+  canvas.height / 2,
   100,
   100,
   "#00ff00"
