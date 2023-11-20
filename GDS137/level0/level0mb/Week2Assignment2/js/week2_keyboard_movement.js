@@ -9,6 +9,7 @@ var player;
 var ball;
 var prevX;
 
+
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");

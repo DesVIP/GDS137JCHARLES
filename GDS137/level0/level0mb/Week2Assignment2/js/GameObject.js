@@ -8,7 +8,7 @@ function GameObject(x, y, w, h, color) {
 
   if (w == undefined) this.width = 20;
   else this.width = w;
-  if (h == undefined) this.height = 200;
+  if (h == undefined) this.height = 150;
   else this.height = h;
 
   //player's color
@@ -32,7 +32,6 @@ function GameObject(x, y, w, h, color) {
     );
     context.restore();
   };
-
   this.drawCircle = function () {
     context.save();
     context.fillStyle = "red";
@@ -49,7 +48,7 @@ function GameObject(x, y, w, h, color) {
   this.move = function () {
     this.x += this.vx;
     this.y += this.vy;
-    //console.log(ball.y); 
+    //console.log(ball.y);
   };
 
   this.left = function () {
@@ -65,7 +64,7 @@ function GameObject(x, y, w, h, color) {
   this.bottom = function () {
     return this.y + this.height / 2;
   };
-// This checks if the object is colliding
+  // This checks if the object is colliding
   this.hitTestObject = function (obj) {
     if (
       this.left() < obj.right() &&

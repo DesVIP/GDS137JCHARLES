@@ -64,7 +64,7 @@ function GameObject(x, y, w, h, color) {
   this.bottom = function () {
     return this.y + this.height / 2;
   };
-// This checks if the object is colliding
+  // This checks if the object is colliding
   this.hitTestObject = function (obj) {
     if (
       this.left() < obj.right() &&
