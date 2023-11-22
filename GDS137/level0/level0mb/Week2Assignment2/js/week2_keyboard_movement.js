@@ -169,7 +169,7 @@ function animate() {
   context.moveTo(500, 0);
   context.lineTo(500,800);
   context.closePath();
-  context.lineWidth = 10;
+  context.lineWidth = 5;
   context.stroke();
   context.restore();
 
