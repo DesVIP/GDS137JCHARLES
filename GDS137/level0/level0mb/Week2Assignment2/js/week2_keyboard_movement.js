@@ -11,7 +11,7 @@ var prevX;
 var player2;
 var p1Wins = 0;
 var p2Wins = 0;
-var Result = 1;
+
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
@@ -163,8 +163,8 @@ function animate() {
   }
 
   context.font = "20px Mariam Fixed";
-  context.fillText("Player 1 | Player 2", 450, 50);
-  context.fillText(p1Wins + " - " + p2Wins, 505, 100);
+  context.fillText("Player 1 | Player 2", 450, 50, );
+  context.fillText(p1Wins + " - " + p2Wins, 504, 75, );
 
   //Update the Screen
   player1.drawRect();
