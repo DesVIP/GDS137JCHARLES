@@ -12,7 +12,6 @@ var player2;
 var p1Wins = 0;
 var p2Wins = 0;
 
-
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
@@ -39,6 +38,8 @@ timer = setInterval(animate, interval);
 
 function animate() {
   context.clearRect(0, 0, canvas.width, canvas.height);
+
+  
 
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
@@ -162,9 +163,21 @@ function animate() {
     prevX = ball.x;
   }
 
+  context.save();
+  context.strokeStyle = "yellow";
+  context.beginPath();
+  context.moveTo(500, 0);
+  context.lineTo(500,800);
+  context.closePath();
+  context.lineWidth = 10;
+  context.stroke();
+  context.restore();
+
   context.font = "20px Mariam Fixed";
-  context.fillText("Player 1 | Player 2", 450, 50, );
-  context.fillText(p1Wins + " - " + p2Wins, 504, 75, );
+  context.fillText("Player 1 | Player 2", 428, 50);
+  context.fillText(p1Wins + " - " + p2Wins, 483, 75);
+
+  
 
   //Update the Screen
   player1.drawRect();
