@@ -9,11 +9,19 @@ var player1;
 var ball;
 var prevX;
 var player2;
+var p1Wins = 0;
+var p2Wins = 0;
 
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
+
+context.font = "20px Mariam Fixed";
+context.fillText("Player 1 | Player 2", 450, 50);
+context.fillText(p1Wins + " - " + p2Wins, 505, 100);
+
+
 
 //Instantiate the Player
 player1 = new GameObject();
@@ -28,7 +36,7 @@ player2 = new GameObject(
 ball.x = 100;
 
 //------Declare the Player's speed on the x and y axis------
-ball.vx = -6;
+ball.vx = -10;
 ball.vy = 0;
 //----------------------------------------------------
 
@@ -41,7 +49,8 @@ function animate() {
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
     ball.vy = 0;
-
+    p1Wins + 1;
+    console.log(p1Wins);
     ball.vx > canvas.width + ball.width / 2;
     ball.vx = 10;
     ball.x = canvas.width / 2;
@@ -52,7 +61,8 @@ function animate() {
   //------------Bounce of Left-------------------------
   if (ball.x < ball.width / 2) {
     ball.vy = 0;
-
+    p2Wins + 1;
+    console.log(p2Wins);
     ball.vx < canvas.width - ball.width / 2;
     ball.vx = -10;
     ball.x = canvas.width / 2;
@@ -120,13 +130,13 @@ function animate() {
 
     //Top
     if (ball.y < player1.y - 25) {
-      ball.vx = -5;
-      ball.vy = -5;
+      ball.vx = -10;
+      ball.vy = -10;
     } 
      //Bottom 
   if (ball.y > player1.y + 25) {
-    ball.vx = -5;
-    ball.vy = 5;
+    ball.vx = -10;
+    ball.vy = 10;
   }
     //Middle
     ball.x = prevX;
@@ -140,13 +150,13 @@ function animate() {
 
     //Top
     if (ball.y < player2.y - 25) {
-      ball.vx = 5;
-      ball.vy = -5;
+      ball.vx = 10;
+      ball.vy = -10;
     } 
      //Bottom 
   if (ball.y > player2.y + 25) {
-    ball.vx = 5;
-    ball.vy = 5;
+    ball.vx = 10;
+    ball.vy = 10;
   }
     //Middle
     ball.x = prevX;

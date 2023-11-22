@@ -75,6 +75,7 @@ function animate() {
 
   //Check Collisions
 
+
   //Demonstrates Accuracy of Bounding Box Collision
   if (lBlock1.hitTestObject(player)) {
     //change color
