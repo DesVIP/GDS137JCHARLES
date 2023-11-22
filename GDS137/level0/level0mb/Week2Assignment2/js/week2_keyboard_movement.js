@@ -11,24 +11,18 @@ var prevX;
 var player2;
 var p1Wins = 0;
 var p2Wins = 0;
-
+var Result = 1;
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
 
-context.font = "20px Mariam Fixed";
-context.fillText("Player 1 | Player 2", 450, 50);
-context.fillText(p1Wins + " - " + p2Wins, 505, 100);
-
-
-
 //Instantiate the Player
 player1 = new GameObject();
 ball = new GameObject();
 player2 = new GameObject(
-  canvas.width/2 + 502,
-  canvas.height / 2 ,
+  canvas.width / 2 + 502,
+  canvas.height / 2,
   20,
   150,
   "#00D241"
@@ -49,24 +43,28 @@ function animate() {
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
     ball.vy = 0;
-    p1Wins + 1;
-    console.log(p1Wins);
+
     ball.vx > canvas.width + ball.width / 2;
     ball.vx = 10;
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
+
+    p1Wins++;
+    console.log(p1Wins);
   }
   //---------------------------------------------------
 
   //------------Bounce of Left-------------------------
   if (ball.x < ball.width / 2) {
     ball.vy = 0;
-    p2Wins + 1;
-    console.log(p2Wins);
+
     ball.vx < canvas.width - ball.width / 2;
     ball.vx = -10;
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
+
+    p2Wins++;
+    console.log(p2Wins);
   }
 
   //---------------------------------------------------
@@ -114,7 +112,7 @@ function animate() {
     player1.y = 725;
   }
   if (player2.y > 725) {
-    player2.y = 725
+    player2.y = 725;
   }
 
   //---------------Boundary of Up------------------------
@@ -127,17 +125,16 @@ function animate() {
 
   //Paddle Boundary
   if (player1.hitTestObject(ball)) {
-
     //Top
     if (ball.y < player1.y - 25) {
       ball.vx = -10;
       ball.vy = -10;
-    } 
-     //Bottom 
-  if (ball.y > player1.y + 25) {
-    ball.vx = -10;
-    ball.vy = 10;
-  }
+    }
+    //Bottom
+    if (ball.y > player1.y + 25) {
+      ball.vx = -10;
+      ball.vy = 10;
+    }
     //Middle
     ball.x = prevX;
     ball.vx = 0 - ball.vx;
@@ -147,17 +144,16 @@ function animate() {
   }
 
   if (player2.hitTestObject(ball)) {
-
     //Top
     if (ball.y < player2.y - 25) {
       ball.vx = 10;
       ball.vy = -10;
-    } 
-     //Bottom 
-  if (ball.y > player2.y + 25) {
-    ball.vx = 10;
-    ball.vy = 10;
-  }
+    }
+    //Bottom
+    if (ball.y > player2.y + 25) {
+      ball.vx = 10;
+      ball.vy = 10;
+    }
     //Middle
     ball.x = prevX;
     ball.vx = 0 - ball.vx;
@@ -166,7 +162,9 @@ function animate() {
     prevX = ball.x;
   }
 
- 
+  context.font = "20px Mariam Fixed";
+  context.fillText("Player 1 | Player 2", 450, 50);
+  context.fillText(p1Wins + " - " + p2Wins, 505, 100);
 
   //Update the Screen
   player1.drawRect();
