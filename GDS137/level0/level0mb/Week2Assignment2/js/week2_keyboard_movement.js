@@ -11,6 +11,7 @@ var prevX;
 var player2;
 var p1Wins = 0;
 var p2Wins = 0;
+var img=document.getElementById("ric");
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
@@ -87,6 +88,7 @@ function animate() {
   }
   //Erase the Screen
   context.clearRect(0, 0, canvas.width, canvas.height);
+  
 
   //Move the Player to the right
 
@@ -180,8 +182,13 @@ function animate() {
   
 
   //Update the Screen
+
   player1.drawRect();
   player2.drawRect();
   ball.drawCircle();
+  context.drawImage(img, 10, 10, 10, 10, 10, 10, 10, 10);
   ball.move();
+  
+
+  
 }
