@@ -28,6 +28,8 @@ player2 = new GameObject(
   "#00D241"
 );
 ball.x = 100;
+ball.width = 30;
+ball.height = 30;
 
 //------Declare the Player's speed on the x and y axis------
 ball.vx = -10;
@@ -40,13 +42,13 @@ timer = setInterval(animate, interval);
 function animate() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  
+  ball.move();
 
   //--------------Bounce of Right----------------------
   if (ball.x > canvas.width - ball.width / 2) {
     ball.vy = 0;
 
-    ball.vx > canvas.width + ball.width / 2;
+    ball.vx = canvas.width + ball.width / 2;
     ball.vx = 10;
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
@@ -60,7 +62,7 @@ function animate() {
   if (ball.x < ball.width / 2) {
     ball.vy = 0;
 
-    ball.vx < canvas.width - ball.width / 2;
+    ball.vx = canvas.width - ball.width / 2;
     ball.vx = -10;
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
@@ -87,7 +89,7 @@ function animate() {
     ball.vy = 10;
   }
   //Erase the Screen
-  context.clearRect(0, 0, canvas.width, canvas.height);
+
   
 
   //Move the Player to the right
@@ -108,6 +110,8 @@ function animate() {
     player2.y += 10;
   }
 
+
+  
   //Boundaries
 
   //---------------Boundary of Down----------------------
@@ -179,15 +183,14 @@ function animate() {
   context.fillText("Player 1 | Player 2", 428, 50);
   context.fillText(p1Wins + " - " + p2Wins, 483, 75);
 
-  
+  //context front Work right and left
 
   //Update the Screen
 
   player1.drawRect();
   player2.drawRect();
   ball.drawCircle();
-  context.drawImage(img, 10, 10, 10, 10, 10, 10, 10, 10);
-  ball.move();
+  context.drawImage(img, ball.x - ball.width/2 , ball.y-ball.height/2 , ball.width  , ball.height);
   
 
   
