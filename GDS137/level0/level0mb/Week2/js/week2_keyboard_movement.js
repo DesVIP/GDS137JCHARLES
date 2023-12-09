@@ -1,7 +1,7 @@
 //Declare my variables
 
-var canvas;
-var context;
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000 / 60;
@@ -9,6 +9,9 @@ var player;
 var ball;
 var prevX;
 var score = 0;
+var gravity = 1
+var frictionX = .85;
+var frictionY = .97;
 
 //Set Up the Canvas
 canvas = document.getElementById("canvas");
@@ -17,16 +20,23 @@ context = canvas.getContext("2d");
 //Instantiate the Player
 player = new GameObject();
 ball = new GameObject();
-ball.x = 500;
-ball.y = 500;
-player.x = 500;
-player.y = 700;
+
+
+ball.x = canvas.width/2;
+ball.y = canvas.height/2;
+player.x = canvas.width/2;
+player.y = canvas.height/2 - 50
+
+
+ball.width = 80;
+ball.height = 80;
 player.width = 250;
 player.height = 40;
 
 //------Declare the Player's speed on the x and y axis------
-ball.vx = 0;
-ball.vy = 1;
+ball.vx = 1;
+ball.vy = 0;
+
 
 //----------------------------------------------------
 
@@ -34,143 +44,119 @@ ball.vy = 1;
 timer = setInterval(animate, interval);
 
 function animate() {
+
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  //Ball Movement/Friction/Gravity
+
   ball.move();
+  ball.vy *= frictionY;
+  ball.vy += gravity;
 
+//-------------Bounce off Bottom---------------
+if(ball.y >= canvas.height -ball.height/2)
+{
+  ball.y = canvas.height - ball.height
+  ball.vy = -ball.vy
+      ball.vy += gravity;
+      ball.y += ball.vy;
+      score = 0
+}
 
-  //Top bounce
-  if(ball.y <= 0 + ball.height/2) {
-    ball.vy = -ball.vy;
-  }
+  //--------------Bounce off Top------------------
+if(ball.y <= 0 + ball.height/2)
+{
+  ball.vy = -ball.vy;
+}
 
+  //--------------Bounce Right---------------------
+if(ball.x > canvas.width - ball.width/2)
+{
+  ball.x = canvas.width - ball.width/2
+  ball.vx = -ball.vx;
+}
 
-  //--------------Bounce of Right----------------------
-  if (ball.x > canvas.width - ball.width / 2) {
-    ball.vx = -ball.vx;
-    ball.x = canvas.width - ball.width / 2;
-    ball.vx = -10;
-  }
-  //---------------------------------------------------
+  //--------------Bounce Left----------------------
+if(ball.x < 0 +ball.width/2)
+{
+  ball.x = 0 + ball.width/2
+  ball.vx = -ball.vx;
+}
 
-  //------------Bounce of Left-------------------------
-  if (ball.x < ball.width / 2) {
-    ball.vx = -ball.vx;
-    ball.vx < canvas.width - ball.width / 2;
-    ball.vx = 10;
-   }
-   
-  //---------------------------------------------------
+//Ball to Player(Paddle) Collision
 
-  //---------------Bounce of Down----------------------
-  if (ball.y  > canvas.height) {
-    console.log(ball.y)
-    ball.vy = -ball.vy;
-    ball.y < ball.height - canvas.height;
-    ball.vy = -10;
-  }
-  //---------------------------------------------------
-
-  //---------------Bounce of Up------------------------
-  if (ball.y < 0) {
-    ball.vy = -ball.vy;
-    ball.y < ball.height / 2;
-    ball.vy = 5;
-  }
-
-  
-
-  //Move the Player to the right
-
-  if(a)
-	{
-		console.log("Moving Right");
-		player.x += -2;
-	}
-	if(d)
-	{
-		console.log("Moving Left");
-		player.x += 2;
-	}
-	if(w)
-	{
-		console.log("Moving Up");
-		player.y += 2;
-	}
-	if(s)
-	{
-		console.log("Moving Down")
-		player.y += -2;
-	}
-
-
-  //Boundaries
-
-  //---------------Boundary of Down----------------------
-  if (player.y > 725) {
-    player.y = 725;
-  }
-
-  //---------------Boundary of Up------------------------
-  if (player.y < player.height / 2) {
-    player.y = player.height / 2;
-  }
-
-  //Paddle Boundary
-
-  //Middle
-  if (player.hitTestObject(ball)) {
-    ball.x = prevX;
-    ball.vy = -35 ;
-    console.log("colliding");
-  } else {
-    prevX = ball.x;
-  }
-
-  //Left Middle
-  if (ball.x < player.x - 100) {
+if(ball.hitTestObject(player))
+    {
+    ball.vy = player.y - ball.y/2 - player.y/2
     ball.vy = -35
+    score = score +1
+    }
+
+//Player(Paddle) Movement & Friction
+
+if (a)
+{
+    console.log("Left");
+    paddle.vx += -2
+}
+if (d)
+{
+    console.log("Right");
+    paddle.vx += 2
+}
+
+player.vx *= frictionX;
+player.x += paddle.vx;
+
+//Player(Paddle) Inner/Outer Collision
+
+if(ball.x < player.x - player.width/6)
+    {
     ball.vx = -ball.force
-    console.log("colliding2");
-  }
+    }
 
-  //Left
-  if (ball.x < player.x - 100) {
-    ball.vy = -35
-    ball.vx = ball.force*5
-  }
+    if(ball.x < player.x + paddle.width /6)
+    {
+    ball.vx = -ball.force
+    }
 
-  //Right Middle
-  if (ball.x > player.x - 100) {
-    ball.vy = -35
+    if(ball.x > player.x - player.width/3)
+    {
+    ball.vx = -ball.force
+    }
+
+    if(ball.x > player.x + player.width /3)
+    {
     ball.vx = ball.force
-  }
-  
-   //Right
-  if (ball.x > player.x - 100) {
-    ball.vy = -35
-    ball.vx = ball.force*5
-  }
-  
+    }
 
-  //Score
-  context.font = "25px black";
-  context.font = "Arial";
-  context.fillText("Score: ", 80, 25 );
-  
+ //Player(Paddle) Left & Right Collision
 
-  //Line
-  context.beginPath();
-  context.moveTo(player.x, player.y);
-  context.lineTo(ball.x, ball.y);
-  context.closePath();
-  context.lineWidth = 2;
-  context.stroke();
-  context.restore();
+ if (player.x < 0 + player.width /2)
+ {
+     player.x = 0 + player.width /2
+ }
 
+ if (player.x > canvas.width - player.width /2)
+ {
+     player.x = canvas.width - player.width /2
+ }
 
-  //Update the Screen
-  player.drawRect();
-  ball.drawCircle();
-  
+ //Line Properties
+ context.beginPath();
+ context.moveTo(player.x, player.y);
+ context.lineTo(ball.x, ball.y);
+ context.closePath();
+ context.lineWidth = 2;
+ context.stroke();
+ context.restore();
+
+ //Score
+ context.font = "16px Arial";
+    context.fillText("Score", 0 + ball.width/2, ball.width/2);
+    context.fillText(score, 0 + ball.width + ball.width/2, ball.width/2);
+    
+ //Game Output
+ ball.drawCircle()
+ player.drawRect()
 }
