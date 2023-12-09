@@ -1,14 +1,14 @@
 // JavaScript Document
 function GameObject(x, y, w, h, color) {
   //Default Values
-  if (x == undefined) this.x = canvas.width/2;
+  if (x == undefined) this.x = canvas.width / 2;
   else this.x = x;
-  if (y == undefined) this.y = canvas.width/2;
+  if (y == undefined) this.y = canvas.width / 2;
   else this.y = y;
 
-  if (w == undefined) this.width = 0;
+  if (w == undefined) this.width = 100;
   else this.width = w;
-  if (h == undefined) this.height = 0;
+  if (h == undefined) this.height = 100;
   else this.height = h;
 
   //player's color
@@ -16,10 +16,10 @@ function GameObject(x, y, w, h, color) {
   else this.color = color;
 
   //player's velocity or speed on each axis
-  this.vx = 0;
-  this.vy = 0;
+  this.vx = 4;
+  this.vy = 4;
 
-  this.force = 1
+  this.force = 1;
 
   //This draws the player to the screen
   this.drawRect = function () {
@@ -40,8 +40,8 @@ function GameObject(x, y, w, h, color) {
     context.fillStyle = "#ff00ff";
     context.beginPath();
     context.translate(this.x, this.y);
-    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
-    context.arc(0, 0, 50 / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
+    context.arc(0, 0, this.width / 2, 0, (360 * Math.PI) / 180, true);
     context.closePath();
     context.fill();
     context.restore();
