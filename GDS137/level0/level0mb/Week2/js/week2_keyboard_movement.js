@@ -70,6 +70,7 @@ function animate() {
     ball.vy = paddle.y - ball.y / 2 - paddle.y / 2;
     ball.vy = -35;
     score = score + 1;
+    
 
     //Player(Paddle) Inner/Outer Collision
 
@@ -89,15 +90,15 @@ function animate() {
       ball.vx = ball.force;
     }
 
-    context.clearRect(0, 0, canvas.width, canvas.height);
+   
   }
 
-  //--------------Top Bounce------------------
+  //--------------Up Bounce------------------
   if (ball.y <= 0 + ball.height / 2) {
     ball.vy = -ball.vy;
   }
 
-  //-------------Bottom Bounce---------------
+  //-------------Down Bounce---------------
   if (ball.y >= canvas.height - ball.height / 2) {
     ball.y = canvas.height - ball.height;
     ball.vy = -ball.vy * 0.67;
