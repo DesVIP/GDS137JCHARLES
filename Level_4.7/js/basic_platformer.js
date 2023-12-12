@@ -131,10 +131,12 @@ function animate()
 		player.x++;
 		player.vx = 0;
 	}
-	while(platform1.hitTestPoint(player.right()) && player.vx >=0 && d == true)
+	while(platform1.hitTestPoint(player.right()) && player.vx >=0)
 	{
-		player.x--;
+		player.x = 400;
 		player.vx = 0;
+		platform1.x = 1000;
+		platform1.y = 1000;
 		
 	}
 	
