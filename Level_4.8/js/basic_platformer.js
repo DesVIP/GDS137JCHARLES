@@ -5,7 +5,7 @@ var context;
 var timer;
 var interval;
 var player;
-var key = false;
+var Key1 = false;
 
 
 	canvas = document.getElementById("canvas");
@@ -137,24 +137,28 @@ function animate()
 	{
 		player.x--;
 		player.vx = 0;
-		if (key==true)
+
+		if (Key1 == true)
 		{
-			platform1.x = 10000;
-			platform1.y = 10000;
+			platform1.x = 1000;
+			platform1.y = 1000;
 		}
 	}
 
-	if(player.hitTestObject(goal))
-	{
-		goal.y = 10000;
-		key = true;
-	}
 	
 	//---------Objective: Let Me Out!---------------------------------------------------------------------------------------------------- 
 	//---------Run this program first.
 	//---------Get the pearl to open the door--------------------------------------------------------------------------------------------
 	//---------Hint: you'll need a new variable to keep track of the key-----------------------------------------------------------------
-	//pls work
+	
+	if(player.hitTestObject(goal))
+	{
+		goal.y = 10000;
+		Key1 = true
+	}
+	
+	
+
 
 
 	
